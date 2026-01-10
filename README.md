@@ -81,14 +81,14 @@ node scripts/interact.js
 
 Average costs at 50 Gwei, $2000 ETH:
 
-| Operation | Gas Used | Cost (USD) |
-|-----------|----------|------------|
-| Create Tender | ~340,000 | ~$10.20 |
-| Submit Bid | ~85,000 | ~$2.55 |
-| Reveal Bid | ~48,000 | ~$1.44 |
-| Select Winner | ~55,000 | ~$1.65 |
-| Approve Milestone | ~47,000 | ~$1.41 |
-| Release Payment | ~38,000 | ~$1.14 |
+| Operation          | Gas Used     | Cost (USD)  |
+| ------------------ | ------------ | ----------- |
+| Create Tender      | ~340,000     | ~$10.20     |
+| Submit Bid         | ~85,000      | ~$2.55      |
+| Reveal Bid         | ~48,000      | ~$1.44      |
+| Select Winner      | ~55,000      | ~$1.65      |
+| Approve Milestone  | ~47,000      | ~$1.41      |
+| Release Payment    | ~38,000      | ~$1.14      |
 | **Full Lifecycle** | **~950,000** | **~$28.50** |
 
 ## 🔒 Security Analysis
@@ -96,6 +96,7 @@ Average costs at 50 Gwei, $2000 ETH:
 **Security Score: 9.0/10**
 
 ### Strengths
+
 - ✅ Battle-tested OpenZeppelin contracts ($500B+ TVL protected)
 - ✅ Comprehensive reentrancy protection
 - ✅ Custom front-running prevention (commit-reveal)
@@ -103,6 +104,7 @@ Average costs at 50 Gwei, $2000 ETH:
 - ✅ DoS attack prevention (bounded loops)
 
 ### Addressed Vulnerabilities
+
 - ✅ Reentrancy attacks
 - ✅ Front-running
 - ✅ Unauthorized access
@@ -162,12 +164,14 @@ npx hardhat coverage
 ## 🎓 Academic Context
 
 This project was developed for:
+
 - **Course**: Blockchain & Smart Contracts
 - **Academic Year**: 2025-2026
 - **Group**: G1
 - **Security Constraint**: Prevent front-running attacks
 
 ### Project Parameters
+
 - Max Budget: 12 ETH
 - Submission Deadline: 2 days
 - Reveal Deadline: +1 day
@@ -178,6 +182,7 @@ This project was developed for:
 ## 🛡️ Security Recommendations
 
 Before mainnet deployment:
+
 1. ✅ Professional security audit ($15k-$30k)
 2. ✅ Multi-sig wallet for owner role (Gnosis Safe)
 3. ✅ Insurance coverage (Nexus Mutual)
