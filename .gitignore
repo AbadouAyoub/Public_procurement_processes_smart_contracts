@@ -22,22 +22,16 @@ artifacts
 .DS_Store
 Thumbs.db
 
-# Documentation (keep separate from code)
-docs/
-*.pdf
-*.tex
+# Keep only essential markdown files
 *.md
 !README.md
+!AI_CRITIQUE.md
 !contracts/README.md
 
-# Image files
-*.png
-*.jpg
-*.jpeg
-*.gif
-
-# Temporary files
+# Build and temp files
 *.tmp
 *.bak
 *.swp
 ~*
+dist/
+build/

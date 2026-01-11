@@ -1,60 +1,60 @@
-# Système de Marchés Publics sur Blockchain
+# Public Procurement System on Blockchain
 
-**Système décentralisé de gestion des appels d'offres publics** utilisant des Smart Contracts Ethereum pour garantir transparence et équité.
-
----
-
-## 📖 Description du Projet
-
-Ce projet implémente une solution blockchain pour gérer les appels d'offres publics de manière transparente et sécurisée. Il remplace les processus traditionnels opaques par un système automatisé et vérifiable sur la blockchain Ethereum.
-
-### Problème Résolu
-
-- ❌ **Traditionnellement** : Processus opaques, risque de corruption, manipulation des offres
-- ✅ **Notre Solution** : Enregistrement immuable, pattern commit-reveal anti-manipulation, paiements automatisés par jalons
-
-### Fonctionnalités Principales
-
-1. **Création d'appels d'offres** : Le gouvernement publie des appels d'offres avec budget et délais
-2. **Soumission sécurisée** : Les entreprises soumettent leurs offres en mode commit-reveal (anti-front-running)
-3. **Sélection automatique** : L'offre valide la plus basse est automatiquement sélectionnée
-4. **Paiements par jalons** : Versements progressifs validés par un auditeur indépendant
-5. **Sécurité renforcée** : Protection contre les attaques (reentrancy, front-running, DoS)
+**Decentralized public tender management system** using Ethereum Smart Contracts to ensure transparency and fairness.
 
 ---
 
-## 🏗️ Architecture Technique
+## 📖 Project Description
+
+This project implements a blockchain solution to manage public tenders in a transparent and secure manner. It replaces traditional opaque processes with an automated and verifiable system on the Ethereum blockchain.
+
+### Problem Solved
+
+- ❌ **Traditionally**: Opaque processes, risk of corruption, bid manipulation
+- ✅ **Our Solution**: Immutable records, commit-reveal pattern to prevent manipulation, automated milestone-based payments
+
+### Main Features
+
+1. **Tender Creation**: Government publishes tenders with budget and deadlines
+2. **Secure Submission**: Companies submit bids using commit-reveal mode (anti-front-running)
+3. **Automatic Selection**: The lowest valid bid is automatically selected
+4. **Milestone Payments**: Progressive payments validated by an independent auditor
+5. **Enhanced Security**: Protection against attacks (reentrancy, front-running, DoS)
+
+---
+
+## 🏗️ Technical Architecture
 
 ### Smart Contracts
 
-Le projet contient **2 versions** du contrat :
+The project contains **2 versions** of the contract:
 
-| Contrat                         | Description                             | Usage                           |
-| ------------------------------- | --------------------------------------- | ------------------------------- |
-| **SecureProcurementSystem.sol** | Version **SÉCURISÉE** avec OpenZeppelin | 🟢 **Production**               |
-| **ProcurementSystem.sol**       | Version **VULNÉRABLE** (éducative)      | 🔴 **Apprentissage uniquement** |
+| Contract                        | Description                             | Usage                      |
+| ------------------------------- | --------------------------------------- | -------------------------- |
+| **SecureProcurementSystem.sol** | **SECURE** version with OpenZeppelin    | 🟢 **Production**          |
+| **ProcurementSystem.sol**       | **VULNERABLE** version (educational)    | 🔴 **Learning only**       |
 
-### Technologies Utilisées
+### Technologies Used
 
-- **Solidity 0.8.28** : Langage de smart contracts
-- **Hardhat** : Framework de développement et tests
-- **OpenZeppelin** : Bibliothèques de sécurité (Ownable, ReentrancyGuard, Pausable)
-- **Ethers.js** : Interaction avec la blockchain
-- **Chai** : Framework de tests
+- **Solidity 0.8.28**: Smart contract language
+- **Hardhat**: Development and testing framework
+- **OpenZeppelin**: Security libraries (Ownable, ReentrancyGuard, Pausable)
+- **Ethers.js**: Blockchain interaction
+- **Chai**: Testing framework
 
-### Sécurité
+### Security
 
-- ✅ **OpenZeppelin Ownable** : Contrôle d'accès
-- ✅ **ReentrancyGuard** : Protection contre les attaques de réentrance
-- ✅ **Pausable** : Mécanisme d'arrêt d'urgence
-- ✅ **Commit-Reveal Pattern** : Empêche la manipulation des offres (front-running)
-- ✅ **Boucles bornées** : Protection contre les attaques DoS
+- ✅ **OpenZeppelin Ownable**: Access control
+- ✅ **ReentrancyGuard**: Protection against reentrancy attacks
+- ✅ **Pausable**: Emergency stop mechanism
+- ✅ **Commit-Reveal Pattern**: Prevents bid manipulation (front-running)
+- ✅ **Bounded Loops**: Protection against DoS attacks
 
 ---
 
-## 🚀 Installation et Configuration
+## 🚀 Installation and Setup
 
-### Prérequis
+### Prerequisites
 
 - **Node.js** >= 16.0.0
 - **npm** >= 8.0.0
@@ -62,141 +62,139 @@ Le projet contient **2 versions** du contrat :
 ### Installation
 
 ```bash
-# 1. Cloner le repository
+# 1. Clone the repository
 git clone https://github.com/abadouayoub/Public_procurement_processes_smart_contracts.git
 cd MarchePublicSmartContracts
 
-# 2. Installer les dépendances
+# 2. Install dependencies
 npm install
 
-# 3. Vérifier l'installation
+# 3. Verify installation
 npx hardhat version
 ```
 
-**Installation réussie si vous voyez** : `Hardhat version X.X.X`
+**Installation successful if you see**: `Hardhat version X.X.X`
 
 ---
 
-## 🧪 Comment Tester le Projet
+## 🧪 How to Test the Project
 
-### 1️⃣ Tests Unitaires Complets
+### 1️⃣ Complete Unit Tests
 
-Exécute tous les tests du projet (couverture complète des fonctionnalités) :
+Run all project tests (complete feature coverage):
 
 ```bash
 npx hardhat test
 ```
 
-**Résultat attendu** : ~50+ tests qui passent ✅
+**Expected result**: ~50+ passing tests ✅
 
-### 2️⃣ Tests de Sécurité (Vulnérabilités)
+### 2️⃣ Security Tests (Vulnerabilities)
 
-Vérifie que le contrat sécurisé résiste aux attaques :
+Verify that the secure contract resists attacks:
 
 ```bash
 npx hardhat test test/VulnerabilityTests.test.js
 ```
 
-**Ce qui est testé** :
+**What is tested**:
+- ✅ Protection against reentrancy attacks
+- ✅ Protection against front-running
+- ✅ Strict access control
+- ✅ Edge case handling
 
-- ✅ Protection contre reentrancy attacks
-- ✅ Protection contre front-running
-- ✅ Contrôle d'accès strict
-- ✅ Gestion des cas limites
+### 3️⃣ Gas Cost Analysis
 
-### 3️⃣ Analyse des Coûts de Gas
-
-Mesure les coûts de chaque opération :
+Measure the cost of each operation:
 
 ```bash
-# Analyse détaillée
+# Detailed analysis
 npx hardhat test test/ComprehensiveGasAnalysis.test.js
 
-# Analyse simple
+# Simple analysis
 npx hardhat test test/SimpleGasAnalysis.test.js
 ```
 
-**Résultat** : Tableau des coûts en gas pour chaque opération
+**Result**: Gas cost table for each operation
 
-### 4️⃣ Tests avec Couverture de Code
+### 4️⃣ Code Coverage Tests
 
 ```bash
 npx hardhat coverage
 ```
 
-**Résultat** : Pourcentage de code testé (objectif : >90%)
+**Result**: Percentage of tested code (goal: >90%)
 
-### 5️⃣ Test Interactif (CLI)
+### 5️⃣ Interactive Test (CLI)
 
-Déployer et interagir avec le contrat en mode interactif :
+Deploy and interact with the contract in interactive mode:
 
 ```bash
-# Terminal 1 : Démarrer un nœud local
+# Terminal 1: Start local node
 npx hardhat node
 
-# Terminal 2 : Déployer le contrat
+# Terminal 2: Deploy contract
 npx hardhat run scripts/deploy-secure.js --network localhost
 
-# Terminal 3 : Interface interactive
+# Terminal 3: Interactive interface
 node scripts/interact.js
 ```
 
-**Menu interactif disponible** :
-
-- Créer un appel d'offres
-- Soumettre une offre
-- Révéler une offre
-- Sélectionner le gagnant
-- Approuver/payer les jalons
+**Available interactive menu**:
+- Create a tender
+- Submit a bid
+- Reveal a bid
+- Select winner
+- Approve/pay milestones
 
 ---
 
-## 📊 Scénario de Test Complet (Manuel)
+## 📊 Complete Test Scenario (Manual)
 
-Suivez ces étapes pour tester le cycle complet :
+Follow these steps to test the complete cycle:
 
-### Étape 1 : Démarrer le réseau local
+### Step 1: Start local network
 
 ```bash
 # Terminal 1
 npx hardhat node
 ```
 
-Gardez ce terminal ouvert ⚠️
+Keep this terminal open ⚠️
 
-### Étape 2 : Déployer le contrat
+### Step 2: Deploy contract
 
 ```bash
 # Terminal 2
 npx hardhat run scripts/deploy-secure.js --network localhost
 ```
 
-**Notez l'adresse du contrat** affichée : `0x...`
+**Note the displayed contract address**: `0x...`
 
-### Étape 3 : Tester avec la console Hardhat
+### Step 3: Test with Hardhat console
 
 ```bash
 npx hardhat console --network localhost
 ```
 
-Puis dans la console :
+Then in the console:
 
 ```javascript
-// Charger le contrat
+// Load contract
 const Contract = await ethers.getContractFactory("SecureProcurementSystem");
-const contract = await Contract.attach("ADRESSE_DU_CONTRAT");
+const contract = await Contract.attach("CONTRACT_ADDRESS");
 
-// Obtenir les comptes de test
+// Get test accounts
 const [owner, company1, company2, auditor] = await ethers.getSigners();
 
-// 1. Créer un appel d'offres
+// 1. Create a tender
 const budget = ethers.parseEther("10");
-const submissionDeadline = Math.floor(Date.now() / 1000) + 86400; // +1 jour
-const revealDeadline = submissionDeadline + 86400; // +2 jours
+const submissionDeadline = Math.floor(Date.now() / 1000) + 86400; // +1 day
+const revealDeadline = submissionDeadline + 86400; // +2 days
 await contract.createTender(budget, submissionDeadline, revealDeadline);
-console.log("✅ Appel d'offres créé");
+console.log("✅ Tender created");
 
-// 2. Soumettre une offre (Company1)
+// 2. Submit a bid (Company1)
 const bidAmount = ethers.parseEther("8");
 const secret = ethers.id("secret123");
 const commitment = ethers.keccak256(
@@ -206,193 +204,193 @@ const commitment = ethers.keccak256(
   )
 );
 await contract.connect(company1).submitBid(0, commitment);
-console.log("✅ Offre soumise (commit)");
+console.log("✅ Bid submitted (commit)");
 
-// 3. Révéler l'offre (après submission deadline)
+// 3. Reveal bid (after submission deadline)
 await ethers.provider.send("evm_increaseTime", [86400]);
 await contract.connect(company1).revealBid(0, bidAmount, secret);
-console.log("✅ Offre révélée");
+console.log("✅ Bid revealed");
 
-// 4. Sélectionner le gagnant
+// 4. Select winner
 await ethers.provider.send("evm_increaseTime", [86400]);
 await contract.selectWinner(0);
-console.log("✅ Gagnant sélectionné");
+console.log("✅ Winner selected");
 
-// 5. Approuver et payer le jalon
+// 5. Approve and pay milestone
 await contract.approveMilestone(0, 0);
 await contract.releasePayment(0, 0, { value: ethers.parseEther("4") });
-console.log("✅ Premier jalon payé");
+console.log("✅ First milestone paid");
 ```
 
 ---
 
-## 📊 Résultats des Tests
+## 📊 Test Results
 
-### Couverture de Tests
+### Test Coverage
 
-Le projet dispose d'une suite de tests complète :
+The project has a complete test suite:
 
-| Type de Tests     | Fichier                            | Nombre de Tests | Objectif                   |
-| ----------------- | ---------------------------------- | --------------- | -------------------------- |
-| Tests Unitaires   | `ProcurementSystem.test.js`        | ~30 tests       | Fonctionnalités de base    |
-| Tests de Sécurité | `VulnerabilityTests.test.js`       | ~15 tests       | Attaques et vulnérabilités |
-| Analyse Gas       | `ComprehensiveGasAnalysis.test.js` | ~10 tests       | Coûts d'opération          |
-| Analyse Simple    | `SimpleGasAnalysis.test.js`        | ~5 tests        | Benchmark rapide           |
+| Test Type       | File                               | Number of Tests | Objective                       |
+| --------------- | ---------------------------------- | --------------- | ------------------------------- |
+| Unit Tests      | `ProcurementSystem.test.js`        | ~30 tests       | Basic functionalities           |
+| Security Tests  | `VulnerabilityTests.test.js`       | ~15 tests       | Attacks and vulnerabilities     |
+| Gas Analysis    | `ComprehensiveGasAnalysis.test.js` | ~10 tests       | Operation costs                 |
+| Simple Analysis | `SimpleGasAnalysis.test.js`        | ~5 tests        | Quick benchmark                 |
 
-### Coûts Moyens (Gas)
+### Average Costs (Gas)
 
-_Prix estimés : 50 Gwei, ETH @ $2000_
+_Estimated prices: 50 Gwei, ETH @ $2000_
 
-| Opération                       | Gas Utilisé  | Coût (USD)  |
-| ------------------------------- | ------------ | ----------- |
-| 🏗️ Créer un appel d'offres      | ~340,000     | ~$10.20     |
-| 📝 Soumettre une offre (commit) | ~85,000      | ~$2.55      |
-| 🔓 Révéler une offre            | ~48,000      | ~$1.44      |
-| 🏆 Sélectionner le gagnant      | ~55,000      | ~$1.65      |
-| ✅ Approuver un jalon           | ~47,000      | ~$1.41      |
-| 💰 Payer un jalon               | ~38,000      | ~$1.14      |
-| **📊 Cycle complet**            | **~950,000** | **~$28.50** |
+| Operation                 | Gas Used     | Cost (USD)  |
+| ------------------------- | ------------ | ----------- |
+| 🏗️ Create tender          | ~340,000     | ~$10.20     |
+| 📝 Submit bid (commit)    | ~85,000      | ~$2.55      |
+| 🔓 Reveal bid             | ~48,000      | ~$1.44      |
+| 🏆 Select winner          | ~55,000      | ~$1.65      |
+| ✅ Approve milestone      | ~47,000      | ~$1.41      |
+| 💰 Pay milestone          | ~38,000      | ~$1.14      |
+| **📊 Complete cycle**     | **~950,000** | **~$28.50** |
 
-### Score de Sécurité
+### Security Score
 
-**Score Global : 9.0/10** ✅
+**Overall Score: 9.0/10** ✅
 
-- ✅ Aucune vulnérabilité critique
-- ✅ Protection OpenZeppelin (>$500B TVL protégé)
-- ✅ Pattern commit-reveal anti-front-running
-- ✅ Tests de sécurité complets
-- ⚠️ Audit professionnel recommandé avant mainnet
+- ✅ No critical vulnerabilities
+- ✅ OpenZeppelin protection (>$500B TVL protected)
+- ✅ Commit-reveal pattern anti-front-running
+- ✅ Complete security tests
+- ⚠️ Professional audit recommended before mainnet
 
 ---
 
-## 📁 Structure du Projet
+## 📁 Project Structure
 
 ```
 MarchePublicSmartContracts/
 │
-├── contracts/                          # Smart Contracts Solidity
-│   ├── SecureProcurementSystem.sol    # ✅ Version SÉCURISÉE (production)
-│   ├── ProcurementSystem.sol          # ⚠️ Version VULNÉRABLE (éducative)
-│   └── README.md                       # Documentation technique
+├── contracts/                          # Solidity Smart Contracts
+│   ├── SecureProcurementSystem.sol    # ✅ SECURE version (production)
+│   ├── ProcurementSystem.sol          # ⚠️ VULNERABLE version (educational)
+│   └── README.md                       # Technical documentation
 │
-├── scripts/                            # Scripts de déploiement
-│   ├── deploy-secure.js               # Déployer version sécurisée
-│   ├── deploy.js                      # Déployer version vulnérable
-│   └── interact.js                    # CLI interactif
+├── scripts/                            # Deployment scripts
+│   ├── deploy-secure.js               # Deploy secure version
+│   ├── deploy.js                      # Deploy vulnerable version
+│   └── interact.js                    # Interactive CLI
 │
-├── test/                               # Suite de tests
-│   ├── ProcurementSystem.test.js      # Tests unitaires complets
-│   ├── VulnerabilityTests.test.js     # Tests de sécurité
-│   ├── ComprehensiveGasAnalysis.test.js # Analyse détaillée gas
-│   ├── SimpleGasAnalysis.test.js      # Benchmark gas rapide
-│   └── GasAnalysis.test.js            # Analyse gas supplémentaire
+├── test/                               # Test suite
+│   ├── ProcurementSystem.test.js      # Complete unit tests
+│   ├── VulnerabilityTests.test.js     # Security tests
+│   ├── ComprehensiveGasAnalysis.test.js # Detailed gas analysis
+│   ├── SimpleGasAnalysis.test.js      # Quick gas benchmark
+│   └── GasAnalysis.test.js            # Additional gas analysis
 │
-├── artifacts/                          # Artefacts de compilation (auto-généré)
-├── cache/                              # Cache Hardhat (auto-généré)
-├── node_modules/                       # Dépendances npm (auto-généré)
+├── artifacts/                          # Compilation artifacts (auto-generated)
+├── cache/                              # Hardhat cache (auto-generated)
+├── node_modules/                       # npm dependencies (auto-generated)
 │
-├── .gitignore                          # Fichiers à ignorer par Git
-├── hardhat.config.js                   # Configuration Hardhat
-├── package.json                        # Dépendances npm
-├── package-lock.json                   # Versions exactes des dépendances
-├── setup.ps1                          # Script d'installation Windows
+├── .gitignore                          # Files to ignore by Git
+├── hardhat.config.js                   # Hardhat configuration
+├── package.json                        # npm dependencies
+├── package-lock.json                   # Exact dependency versions
+├── setup.ps1                          # Windows installation script
 │
-├── README.md                           # 📖 Ce fichier - Guide principal
-└── AI_CRITIQUE.md                      # Critique des outils d'audit IA
+├── README.md                           # 📖 This file - Main guide
+└── AI_CRITIQUE.md                      # AI audit tools critique
 
 ```
 
 ---
 
-## 🎓 Contexte Académique
+## 🎓 Academic Context
 
-**Projet Universitaire** - Blockchain & Smart Contracts
+**University Project** - Blockchain & Smart Contracts
 
-- **Année Académique** : 2025-2026
-- **Groupe** : ABADOU - ETTOUMI
-- **Contrainte Principale** : Empêcher les attaques de front-running
+- **Academic Year**: 2025-2026
+- **Group**: ABADOU - ETTOUMI
+- **Main Constraint**: Prevent front-running attacks
 
-### Paramètres du Projet
+### Project Parameters
 
-| Paramètre            | Valeur                         |
-| -------------------- | ------------------------------ |
-| Budget Maximum       | 12 ETH                         |
-| Délai de soumission  | 2 jours                        |
-| Délai de révélation  | +1 jour (3 jours total)        |
-| Nombre d'entreprises | 3                              |
-| Nombre de jalons     | 2 (50% + 50%)                  |
-| Règle d'audit        | Auditeur approuve les 2 jalons |
-
----
-
-## 🔒 Documentation de Sécurité
-
-### Vulnérabilités Corrigées
-
-Le contrat **SecureProcurementSystem.sol** protège contre :
-
-1. ✅ **Reentrancy Attacks** : `ReentrancyGuard` d'OpenZeppelin
-2. ✅ **Front-Running** : Pattern commit-reveal personnalisé
-3. ✅ **Accès Non Autorisé** : `Ownable` + modificateurs personnalisés
-4. ✅ **Integer Overflow** : Solidity 0.8+ (protections natives)
-5. ✅ **Denial of Service** : Boucles bornées, pattern check-effects-interactions
-
-### Recommandations avant Déploiement Mainnet
-
-Avant de déployer en production sur Ethereum mainnet :
-
-1. 🔍 **Audit Professionnel** : $15,000 - $30,000 (obligatoire)
-   - Recommandé : Trail of Bits, ConsenSys Diligence, OpenZeppelin
-2. 🔐 **Multi-Signature Wallet** : Gnosis Safe pour le rôle owner
-3. 🛡️ **Assurance** : Nexus Mutual ou similaire
-4. 🎁 **Bug Bounty** : Programme Immunefi (~10% TVL)
-5. 📊 **Monitoring** : Tenderly, OpenZeppelin Defender
-
-Voir [AI_CRITIQUE.md](AI_CRITIQUE.md) pour l'analyse des outils d'audit IA.
+| Parameter              | Value                            |
+| ---------------------- | -------------------------------- |
+| Maximum Budget         | 12 ETH                           |
+| Submission Deadline    | 2 days                           |
+| Reveal Deadline        | +1 day (3 days total)            |
+| Number of Companies    | 3                                |
+| Number of Milestones   | 2 (50% + 50%)                    |
+| Audit Rule             | Auditor approves both milestones |
 
 ---
 
-## 🛠️ Commandes Utiles
+## 🔒 Security Documentation
 
-### Développement
+### Fixed Vulnerabilities
+
+The **SecureProcurementSystem.sol** contract protects against:
+
+1. ✅ **Reentrancy Attacks**: OpenZeppelin's `ReentrancyGuard`
+2. ✅ **Front-Running**: Custom commit-reveal pattern
+3. ✅ **Unauthorized Access**: `Ownable` + custom modifiers
+4. ✅ **Integer Overflow**: Solidity 0.8+ (native protections)
+5. ✅ **Denial of Service**: Bounded loops, check-effects-interactions pattern
+
+### Recommendations before Mainnet Deployment
+
+Before deploying to production on Ethereum mainnet:
+
+1. 🔍 **Professional Audit**: $15,000 - $30,000 (mandatory)
+   - Recommended: Trail of Bits, ConsenSys Diligence, OpenZeppelin
+2. 🔐 **Multi-Signature Wallet**: Gnosis Safe for owner role
+3. 🛡️ **Insurance**: Nexus Mutual or similar
+4. 🎁 **Bug Bounty**: Immunefi program (~10% TVL)
+5. 📊 **Monitoring**: Tenderly, OpenZeppelin Defender
+
+See [AI_CRITIQUE.md](AI_CRITIQUE.md) for AI audit tools analysis.
+
+---
+
+## 🛠️ Useful Commands
+
+### Development
 
 ```bash
-# Compiler les contrats
+# Compile contracts
 npx hardhat compile
 
-# Nettoyer les artefacts
+# Clean artifacts
 npx hardhat clean
 
-# Lancer un nœud local
+# Start local node
 npx hardhat node
 
-# Console interactive
+# Interactive console
 npx hardhat console --network localhost
 ```
 
-### Tests
+### Testing
 
 ```bash
-# Tous les tests
+# All tests
 npm test
 
-# Tests avec rapport gas
+# Tests with gas report
 REPORT_GAS=true npx hardhat test
 
-# Test spécifique
+# Specific test
 npx hardhat test test/ProcurementSystem.test.js
 
-# Couverture de code
+# Code coverage
 npx hardhat coverage
 
-# Tests de sécurité uniquement
+# Security tests only
 npx hardhat test test/VulnerabilityTests.test.js
 ```
 
-### Déploiement
+### Deployment
 
 ```bash
-# Réseau local
+# Local network
 npx hardhat run scripts/deploy-secure.js --network localhost
 
 # Testnet (Sepolia)
@@ -404,82 +402,79 @@ npx hardhat run scripts/deploy-secure.js --network mainnet
 
 ---
 
-## 🐛 Dépannage
+## 🐛 Troubleshooting
 
-### Problème : `Error: network does not exist`
+### Problem: `Error: network does not exist`
 
-**Solution** : Vérifiez `hardhat.config.js`, assurez-vous que le réseau est configuré.
+**Solution**: Check `hardhat.config.js`, ensure the network is configured.
 
-### Problème : `Error: cannot find module`
+### Problem: `Error: cannot find module`
 
-**Solution** : Réinstallez les dépendances
-
+**Solution**: Reinstall dependencies
 ```bash
 rm -rf node_modules package-lock.json
 npm install
 ```
 
-### Problème : Tests échouent avec `timeout`
+### Problem: Tests fail with `timeout`
 
-**Solution** : Augmentez le timeout dans `hardhat.config.js`
-
+**Solution**: Increase timeout in `hardhat.config.js`
 ```javascript
 mocha: {
-  timeout: 100000;
+  timeout: 100000
 }
 ```
 
-### Problème : Gas trop élevé
+### Problem: Gas too high
 
-**Solution** : Optimisez le code ou utilisez un réseau layer-2 (Arbitrum, Optimism)
-
----
-
-## 📚 Documentation Complémentaire
-
-| Document                                   | Description                               |
-| ------------------------------------------ | ----------------------------------------- |
-| [contracts/README.md](contracts/README.md) | Documentation technique des contrats      |
-| [AI_CRITIQUE.md](AI_CRITIQUE.md)           | Évaluation critique des outils d'audit IA |
+**Solution**: Optimize code or use a layer-2 network (Arbitrum, Optimism)
 
 ---
 
-## 📜 Licence
+## 📚 Additional Documentation
 
-MIT License - Voir fichier `LICENSE` pour détails.
+| Document                               | Description                          |
+| -------------------------------------- | ------------------------------------ |
+| [contracts/README.md](contracts/README.md) | Technical contract documentation     |
+| [AI_CRITIQUE.md](AI_CRITIQUE.md)       | AI audit tools critical evaluation   |
 
 ---
 
-## 👥 Auteur
+## 📜 License
+
+MIT License - See `LICENSE` file for details.
+
+---
+
+## 👥 Author
 
 **Ayoub Abadou**
-
-- GitHub : [@abadouayoub](https://github.com/abadouayoub)
-- Repository : [Public_procurement_processes_smart_contracts](https://github.com/abadouayoub/Public_procurement_processes_smart_contracts)
-
----
-
-## ⚠️ Avertissement
-
-**Version Éducative** : Ce projet contient une version intentionnellement vulnérable (`ProcurementSystem.sol`) à des fins d'apprentissage. **NE JAMAIS** déployer cette version en production.
-
-**Version Production** : Utilisez **TOUJOURS** `SecureProcurementSystem.sol` avec un audit professionnel préalable.
+- GitHub: [@abadouayoub](https://github.com/abadouayoub)
+- Repository: [Public_procurement_processes_smart_contracts](https://github.com/abadouayoub/Public_procurement_processes_smart_contracts)
 
 ---
 
-## 🚀 Démarrage Rapide (TL;DR)
+## ⚠️ Warning
+
+**Educational Version**: This project contains an intentionally vulnerable version (`ProcurementSystem.sol`) for learning purposes. **NEVER** deploy this version to production.
+
+**Production Version**: **ALWAYS** use `SecureProcurementSystem.sol` with a professional audit beforehand.
+
+---
+
+## 🚀 Quick Start (TL;DR)
 
 ```bash
 # Installation
 npm install
 
-# Tester le projet
+# Test the project
 npx hardhat test
 
-# Déployer localement
+# Deploy locally
 npx hardhat node                                      # Terminal 1
 npx hardhat run scripts/deploy-secure.js --network localhost  # Terminal 2
 node scripts/interact.js                              # Terminal 3 (CLI)
 ```
 
-**✅ Projet testé et fonctionnel** - Prêt pour démonstration académique
+**✅ Tested and functional project** - Ready for academic demonstration
