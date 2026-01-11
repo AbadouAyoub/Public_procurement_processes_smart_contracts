@@ -284,13 +284,17 @@ MarchePublicSmartContracts/
 │   ├── ProcurementSystem.test.js      # Tests unitaires complets
 │   ├── VulnerabilityTests.test.js     # Tests de sécurité
 │   ├── ComprehensiveGasAnalysis.test.js # Analyse détaillée gas
-│   └── SimpleGasAnalysis.test.js      # Benchmark gas rapide
+│   ├── SimpleGasAnalysis.test.js      # Benchmark gas rapide
+│   └── GasAnalysis.test.js            # Analyse gas supplémentaire
 │
-├── artifacts/                          # Artefacts de compilation (généré)
-├── cache/                              # Cache Hardhat (généré)
+├── artifacts/                          # Artefacts de compilation Hardhat (auto-généré)
+├── cache/                              # Cache Hardhat (auto-généré)
+├── node_modules/                       # Dépendances npm (auto-généré)
 │
+├── .gitignore                          # Fichiers à ignorer par Git
 ├── hardhat.config.js                   # Configuration Hardhat
 ├── package.json                        # Dépendances npm
+├── package-lock.json                   # Versions exactes des dépendances
 ├── setup.ps1                          # Script d'installation Windows
 │
 ├── README.md                           # 📖 CE FICHIER (guide principal)
@@ -299,7 +303,14 @@ MarchePublicSmartContracts/
 ├── SECURITY_ANALYSIS_COMPLETE.md       # Analyse de sécurité (100+ pages)
 ├── BLOCKCHAIN_FORENSICS.md             # Analyse forensique blockchain
 ├── AI_CRITIQUE.md                      # Critique des outils d'audit IA
-└── REPORT.md                           # Rapport technique
+├── REPORT.md                           # Rapport technique
+│
+├── smartimage.png                      # Image du smart contract
+├── transaction1.png                    # Screenshot transaction forensique 1
+├── transaction2.png                    # Screenshot transaction forensique 2
+├── transaction3.png                    # Screenshot transaction forensique 3
+├── transaction4.png                    # Screenshot transaction forensique 4
+└── transaction5.png                    # Screenshot transaction forensique 5
 
 ```
 
