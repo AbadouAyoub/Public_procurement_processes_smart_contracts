@@ -287,7 +287,7 @@ MarchePublicSmartContracts/
 │   ├── SimpleGasAnalysis.test.js      # Benchmark gas rapide
 │   └── GasAnalysis.test.js            # Analyse gas supplémentaire
 │
-├── artifacts/                          # Artefacts de compilation Hardhat (auto-généré)
+├── artifacts/                          # Artefacts de compilation (auto-généré)
 ├── cache/                              # Cache Hardhat (auto-généré)
 ├── node_modules/                       # Dépendances npm (auto-généré)
 │
@@ -297,20 +297,8 @@ MarchePublicSmartContracts/
 ├── package-lock.json                   # Versions exactes des dépendances
 ├── setup.ps1                          # Script d'installation Windows
 │
-├── README.md                           # 📖 CE FICHIER (guide principal)
-├── CLI_README.md                       # Documentation CLI interactif
-├── ProjectGLD2026.md                   # Spécification académique complète
-├── SECURITY_ANALYSIS_COMPLETE.md       # Analyse de sécurité (100+ pages)
-├── BLOCKCHAIN_FORENSICS.md             # Analyse forensique blockchain
-├── AI_CRITIQUE.md                      # Critique des outils d'audit IA
-├── REPORT.md                           # Rapport technique
-│
-├── smartimage.png                      # Image du smart contract
-├── transaction1.png                    # Screenshot transaction forensique 1
-├── transaction2.png                    # Screenshot transaction forensique 2
-├── transaction3.png                    # Screenshot transaction forensique 3
-├── transaction4.png                    # Screenshot transaction forensique 4
-└── transaction5.png                    # Screenshot transaction forensique 5
+├── README.md                           # 📖 Ce fichier - Guide principal
+└── AI_CRITIQUE.md                      # Critique des outils d'audit IA
 
 ```
 
@@ -360,7 +348,7 @@ Avant de déployer en production sur Ethereum mainnet :
 4. 🎁 **Bug Bounty** : Programme Immunefi (~10% TVL)
 5. 📊 **Monitoring** : Tenderly, OpenZeppelin Defender
 
-Voir [SECURITY_ANALYSIS_COMPLETE.md](SECURITY_ANALYSIS_COMPLETE.md) pour l'analyse complète.
+Voir [AI_CRITIQUE.md](AI_CRITIQUE.md) pour l'analyse des outils d'audit IA.
 
 ---
 
@@ -449,14 +437,10 @@ mocha: {
 
 ## 📚 Documentation Complémentaire
 
-| Document                                                       | Description                               |
-| -------------------------------------------------------------- | ----------------------------------------- |
-| [ProjectGLD2026.md](ProjectGLD2026.md)                         | Spécification complète du projet          |
-| [CLI_README.md](CLI_README.md)                                 | Guide d'utilisation CLI interactif        |
-| [SECURITY_ANALYSIS_COMPLETE.md](SECURITY_ANALYSIS_COMPLETE.md) | Analyse de sécurité approfondie           |
-| [contracts/README.md](contracts/README.md)                     | Documentation technique des contrats      |
-| [BLOCKCHAIN_FORENSICS.md](BLOCKCHAIN_FORENSICS.md)             | Analyse forensique de transactions        |
-| [AI_CRITIQUE.md](AI_CRITIQUE.md)                               | Évaluation critique des outils d'audit IA |
+| Document                                   | Description                               |
+| ------------------------------------------ | ----------------------------------------- |
+| [contracts/README.md](contracts/README.md) | Documentation technique des contrats      |
+| [AI_CRITIQUE.md](AI_CRITIQUE.md)           | Évaluation critique des outils d'audit IA |
 
 ---
 
